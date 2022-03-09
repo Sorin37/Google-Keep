@@ -1,0 +1,14 @@
+<p [style.color]='titleColor'>{{title}}</p>
+<button (click)='functie()' mat-icon-button> 
+    <mat-icon>
+        add
+    </mat-icon></button>
+<mat-form-field>
+    <input matInput placeholder="Add Note" >
+</mat-form-field>
+<br>
+<input type="text" [(ngModel)]="noteContent">
+<p>Note content is:  {{noteContent}}</p>
+<mat-card class="add-note-card" routerLink="add-note">
+    <button mat-icon-button><mat-icon>add</mat-icon></button>
+ </mat-card>
