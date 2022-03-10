@@ -1,0 +1,33 @@
+<h1>Add a note</h1>
+<label>Title</label>
+<form [formGroup]="form">
+  <mat-form-field>
+    <input
+      matInput
+      name="inputNote"
+      placeholder="Enter your title"
+      type="text"
+      formControlName = "title"
+      required
+    />
+  </mat-form-field>
+  <div *ngIf="title2.errors?.['required']">
+    Title is required.
+  </div>
+  <div *ngIf="title2.errors?.['minlength']">
+    Title must be at least 5 characters long.
+  </div>
+</form>
+<form>
+  <label>Description</label>
+  <br>
+  <mat-form-field>
+    <textarea
+      matInput
+      name="inputNote"
+      [(ngModel)]="description"
+      placeholder="Enter your description"
+    ></textarea>
+  </mat-form-field>
+</form>
+<button mat-button>Add</button>

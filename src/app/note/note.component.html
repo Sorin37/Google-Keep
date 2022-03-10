@@ -1,0 +1,12 @@
+<mat-card
+  *ngFor="let note of notes; let i = index"
+  class="note-card"
+  [style.backgroundColor]="colors[i % colors.length]"
+>
+    <mat-card-header>
+      {{ note.title }}
+    </mat-card-header>
+    <mat-card-content>
+      {{ note.description }}
+    </mat-card-content>
+</mat-card>
