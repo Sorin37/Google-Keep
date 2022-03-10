@@ -16,7 +16,8 @@ import { FilterComponent } from './filter/filter.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { HomeComponent } from './home/home.component';
 import { DummyComponent } from './dummy/dummy.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,9 @@ import { DummyComponent } from './dummy/dummy.component';
     MatFormFieldModule,
     FormsModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSelectModule
 
   ],
   providers: [],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Note } from '../note';
+import { NoteService } from '../services/note.service';
 
 @Component({
   selector: 'app-note',
@@ -8,24 +9,16 @@ import { Note } from '../note';
   styleUrls: ['./note.component.scss'],
 })
 export class NoteComponent implements OnInit {
-  notes: Note[] = [
-    {
-      id: 'Id1',
-      title: 'First note',
-      description: 'This is the description for the first note',
-    },
-    {
-      id: 'Id2',
-      title: 'Second note',
-      description: 'This is the description for the second note',
-    },
-  ];
-  colors: string[] = ['red', 'yellow', 'green', 'blue', 'cyan', 'pink'];
+  notes: Note[];
+  colors: string[] = ['red', 'yellow', 'green', 'blue', 'cyan', 'pink', 'orange', 'gray'];
   form: FormGroup;
 
-  constructor() {}
+  constructor(
+    private noteService: NoteService
+  ) {}
 
   ngOnInit(): void {
-    
+    this.noteService.serviceCall();
+    this.notes=this.noteService.getNotes();
   }
 }
