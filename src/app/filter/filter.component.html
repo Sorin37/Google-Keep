@@ -1,7 +1,18 @@
 <div class="filter-container">
   <div *ngFor="let category of categories" class="filter-div">
-    <button mat-raised-button color="primary">
+    <button
+      mat-raised-button
+      (click)="selectFilter(category.id)"
+      color="primary"
+    >
       {{ category.name | uppercase }}
     </button>
+  </div>
+  <div id="search-div" (click)="searchFilter()">
+    <button mat-icon-button 
+            onclick="document.getElementById('search-input').value = ''"><mat-icon>search</mat-icon></button>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="searchString" id="search-input"/>
   </div>
 </div>

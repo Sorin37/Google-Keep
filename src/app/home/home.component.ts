@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  categoryId: string; 
+  searchString: string;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
+  receiveCategory(categId: string) {
+    this.categoryId = categId;
+    this.searchString = undefined;
+  }
+  receiveSearchString(searchString: string) {
+    this.searchString = searchString;
+  }
 }

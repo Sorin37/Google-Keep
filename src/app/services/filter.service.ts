@@ -15,6 +15,6 @@ export class FilterService {
     return this.categories;
   }
   serviceCall() {
-    console.log('Filter service was called');
+    // console.log('Filter service was called');
   }
 }
