@@ -5,22 +5,21 @@
     <input
       matInput
       name="inputNote"
+      [(ngModel)]="title"
       placeholder="Enter your title"
       type="text"
-      formControlName = "title"
+      formControlName="title"
       required
     />
   </mat-form-field>
-  <div *ngIf="title2.errors?.['required']">
-    Title is required.
-  </div>
+  <div *ngIf="title2.errors?.['required']">Title is required.</div>
   <div *ngIf="title2.errors?.['minlength']">
     Title must be at least 5 characters long.
   </div>
 </form>
 <form>
   <label>Description</label>
-  <br>
+  <br />
   <mat-form-field>
     <textarea
       matInput
@@ -30,4 +29,19 @@
     ></textarea>
   </mat-form-field>
 </form>
-<button mat-button>Add</button>
+<form  [formGroup]="form">
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Type of note</mat-label>
+    <mat-select [(ngModel)]="typeOfNote" 
+                name="typeOfNote"
+                formControlName="typeOfNote"
+                required>
+      <mat-option *ngFor="let filter of filters" [value]="filter.name">
+        {{ filter.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div *ngIf="typeOfNote2.errors?.['required']">Please select a type of note!</div>
+</form>
+<button (click)="addNote()" mat-button>Add</button>
