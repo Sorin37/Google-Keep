@@ -37,7 +37,7 @@
                 name="typeOfNote"
                 formControlName="typeOfNote"
                 required>
-      <mat-option *ngFor="let filter of filters" [value]="filter.name">
+      <mat-option *ngFor="let filter of filters" [value]="filter.id">
         {{ filter.name }}
       </mat-option>
     </mat-select>

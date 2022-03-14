@@ -42,7 +42,7 @@ export class AddNoteComponent implements OnInit {
   get typeOfNote2() { return this.form.get('typeOfNote'); }
 
   addNote():void{
-    this.noteService.addNote(this.title, this.description);
+    this.noteService.addNote(this.title, this.description, this.typeOfNote);
   }
 
 }
