@@ -9,4 +9,11 @@
     <mat-card-content>
       {{ note.description }}
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button><mat-icon>arrow_right_alt</mat-icon></button>
+      <button mat-button><mat-icon>star_half</mat-icon></button>
+      <button mat-button><mat-icon>done_outline</mat-icon></button>
+      <button mat-button routerLink="/edit-note/{{note.id}}"><mat-icon>edit</mat-icon></button>
+      <button mat-button (click)="deleteNote(note.id)"><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
 </mat-card>

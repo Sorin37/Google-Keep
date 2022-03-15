@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from '../category';
+import { Note } from '../note';
 import { NoteComponent } from '../note/note.component';
 import { FilterService } from '../services/filter.service';
 import { NoteService } from '../services/note.service';
@@ -42,7 +43,13 @@ export class AddNoteComponent implements OnInit {
   get typeOfNote2() { return this.form.get('typeOfNote'); }
 
   addNote():void{
-    this.noteService.addNote(this.title, this.description, this.typeOfNote);
+    //this.noteService.addNote(this.title, this.description, this.typeOfNote);
+    const note:Note = {
+      title: this.title,
+      description: this.description,
+      categoryId: this.typeOfNote
+    }
+    this.noteService.addNote(note).subscribe();
   }
 
 }
