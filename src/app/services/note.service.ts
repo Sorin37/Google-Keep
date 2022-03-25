@@ -8,7 +8,7 @@ import { Note } from '../note';
   providedIn: 'root',
 })
 export class NoteService {
-  readonly baseUrl = 'https://localhost:4200';
+  readonly baseUrl = 'https://localhost:5001';
 
   readonly httpOptions = {
     headers: new HttpHeaders({
